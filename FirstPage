@@ -1,0 +1,101 @@
+import java.awt.EventQueue;
+import java.awt.Window;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+
+public class FirstPage extends JFrame {
+
+	protected static final Window Jframe = null;
+	private JPanel Firstpage;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					FirstPage frame = new FirstPage();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public FirstPage() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 512, 537);
+		Firstpage = new JPanel();
+		Firstpage.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(Firstpage);
+		Firstpage.setLayout(null);
+		
+		JButton btnNewButton = new JButton("About");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				About abt = new About();
+				abt.setVisible(true);
+				dispose();
+			}	
+		});
+		btnNewButton.setBounds(10, 453, 82, 23);
+		Firstpage.add(btnNewButton);
+		
+		JButton btnSchoolAttended = new JButton("Achievement");
+		btnSchoolAttended.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnSchoolAttended.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Achievements A = new Achievements();
+				A.setVisible(true);
+				dispose();
+			}
+		});
+		btnSchoolAttended.setBounds(102, 453, 136, 23);
+		Firstpage.add(btnSchoolAttended);
+		
+		JButton btnHobbies = new JButton("Contact Info");
+		btnHobbies.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnHobbies.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ContactInfo H = new ContactInfo();
+				H.setVisible(true);
+				dispose();
+			}
+		});
+		btnHobbies.setBounds(248, 453, 134, 23);
+		Firstpage.add(btnHobbies);
+		
+		JButton btnNewButton_1 = new JButton("Gallery");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Gallery G = new Gallery();
+				G.setVisible(true);
+				dispose();
+			}
+		});
+		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton_1.setBounds(392, 453, 89, 23);
+		Firstpage.add(btnNewButton_1);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\emman\\Downloads\\FrontPage.png"));
+		lblNewLabel.setBounds(0, 0, 496, 498);
+		Firstpage.add(lblNewLabel);
+	}
+}
